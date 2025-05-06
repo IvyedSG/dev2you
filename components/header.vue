@@ -15,9 +15,7 @@
         <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-lg bg-dark/95 backdrop-blur-md rounded-xl w-56 border border-gray-700/40">
           <li><a href="/" class="transition-colors hover:text-accent">Inicio</a></li>
           <li><a href="#proyectos" class="transition-colors hover:text-accent">Proyectos</a></li>
-          <li><a href="#nosotros" class="transition-colors hover:text-accent">Nosotros</a></li>
-          <li><a href="#objetivos" class="transition-colors hover:text-accent">Objetivos</a></li>
-          <li><a href="#contacto" class="transition-colors hover:text-accent">Contacto</a></li>
+          <li><a href="#equipo" class="transition-colors hover:text-accent">Equipo</a></li>
         </ul>
       </div>
 
@@ -25,9 +23,8 @@
       <nav class="hidden lg:flex">
         <ul class="flex space-x-8 text-sm font-medium tracking-wide text-light/80">
           <li><a href="/" class="transition-colors hover:text-accent">Inicio</a></li>
-          <li><a href="#nosotros" class="transition-colors hover:text-accent">Nosotros</a></li>
           <li><a href="#proyectos" class="transition-colors hover:text-accent">Proyectos</a></li>
-          <li><a href="#objetivos" class="transition-colors hover:text-accent">Objetivos</a></li>
+          <li><a href="#equipo" class="transition-colors hover:text-accent">Equipo</a></li>
         </ul>
       </nav>
 

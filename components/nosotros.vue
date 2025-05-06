@@ -1,5 +1,10 @@
 <template>
-  <section id="nosotros" class="py-28 bg-gray-dark">
+  <section id="nosotros" class="relative py-28 bg-gray-dark">
+    <!-- Fondo decorativo -->
+    <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-gray-dark to-transparent opacity-80"></div>
+    <div class="absolute rounded-full -top-20 right-20 w-72 h-72 bg-accent/10 filter blur-3xl"></div>
+    <div class="absolute rounded-full bottom-40 left-20 w-80 h-80 bg-accent/5 filter blur-3xl"></div>
+
     <div class="container px-4 mx-auto text-center">
       <!-- Título -->
       <h2 class="mb-4 text-4xl font-extrabold tracking-tight md:text-5xl">

@@ -29,9 +29,7 @@
         <div v-for="(card, index) in cards" :key="index" 
              class="absolute w-full h-full overflow-hidden transition-all duration-500 border shadow-lg bg-dark border-accent/20 rounded-xl"
              :style="cardStyle(index)">
-          <div class="flex items-center justify-center w-full h-full bg-gradient-to-tr from-gray-dark to-dark">
-            <i :class="`${card.icon} text-6xl text-accent`"></i>
-          </div>
+          <img :src="card.image" alt="Card image" class="w-full h-full object-cover rounded-xl" />
         </div>
         
         <!-- Indicadores de tecnología alrededor de las tarjetas -->
@@ -85,13 +83,13 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-// Datos para las tarjetas
+// Tarjetas con imágenes
 const cards = [
-  { icon: 'fas fa-code' },
-  { icon: 'fas fa-mobile-alt' },
-  { icon: 'fas fa-store' },
-  { icon: 'fas fa-chart-line' },
-  { icon: 'fas fa-paint-brush' }
+  { image: 'image1.jpg' },
+  { image: 'image2.jpg' },
+  { image: 'image3.jpg' },
+  { image: 'image4.jpg' },
+  { image: 'image5.jpg' }
 ];
 
 // Para animar la baraja de tarjetas
@@ -152,8 +150,6 @@ const codeLines = [
 
 const activeCodeLine = ref(0);
 
-
-
 // Rotar las tarjetas automáticamente
 onMounted(() => {
   interval = setInterval(() => {
@@ -207,3 +203,4 @@ onBeforeUnmount(() => {
   }
 }
 </style>
+
