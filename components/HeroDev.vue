@@ -1,12 +1,12 @@
 <template>
-  <div class="hero min-h-screen bg-dark relative overflow-hidden">
+  <div class="relative min-h-screen overflow-hidden hero bg-dark">
     <!-- Elementos de diseño de fondo mejorados -->
-    <div class="absolute top-0 left-0 w-64 h-64 bg-accent/10 rounded-full filter blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl"></div>
-    <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-primary/5 rounded-full filter blur-2xl"></div>
+    <div class="absolute top-0 left-0 w-64 h-64 rounded-full bg-accent/10 filter blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 rounded-full w-96 h-96 bg-accent/10 filter blur-3xl"></div>
+    <div class="absolute rounded-full top-1/3 right-1/4 w-72 h-72 bg-primary/5 filter blur-2xl"></div>
     
     <!-- Elementos decorativos flotantes -->
-    <div class="hidden lg:block absolute inset-0 pointer-events-none">
+    <div class="absolute inset-0 hidden pointer-events-none lg:block">
       <div v-for="(particle, index) in particles" :key="index"
            class="absolute rounded-full opacity-30"
            :class="`bg-${particle.color}`"
@@ -14,7 +14,7 @@
       </div>
       
       <!-- Líneas de código abstractas animadas -->
-      <div class="absolute top-20 left-10 opacity-20 text-accent font-mono text-xs">
+      <div class="absolute font-mono text-xs top-20 left-10 opacity-20 text-accent">
         <div v-for="(line, index) in codeLines" :key="index"
              class="transition-opacity duration-1000"
              :style="`opacity: ${(index % 3 === activeCodeLine) ? '0.9' : '0.3'}; transform: translateY(${index * 1.5}rem);`">
@@ -23,62 +23,60 @@
       </div>
     </div>
     
-    <div class="hero-content flex flex-col lg:flex-row-reverse gap-12">
+    <div class="flex flex-col gap-12 hero-content lg:flex-row-reverse">
       <!-- Componente visual: Baraja de proyectos -->
-      <div class="card-stack relative w-full lg:w-2/5 h-80 lg:h-96">
+      <div class="relative w-full card-stack lg:w-2/5 h-80 lg:h-96">
         <div v-for="(card, index) in cards" :key="index" 
-             class="absolute w-full h-full bg-dark border border-accent/20 rounded-xl overflow-hidden shadow-lg transition-all duration-500"
+             class="absolute w-full h-full overflow-hidden transition-all duration-500 border shadow-lg bg-dark border-accent/20 rounded-xl"
              :style="cardStyle(index)">
-          <div class="w-full h-full bg-gradient-to-tr from-gray-dark to-dark flex items-center justify-center">
+          <div class="flex items-center justify-center w-full h-full bg-gradient-to-tr from-gray-dark to-dark">
             <i :class="`${card.icon} text-6xl text-accent`"></i>
           </div>
         </div>
         
         <!-- Indicadores de tecnología alrededor de las tarjetas -->
-        <div class="hidden lg:block absolute -bottom-8 -left-8 text-2xl text-accent/60 animate-pulse-slow">
+        <div class="absolute hidden text-2xl lg:block -bottom-8 -left-8 text-accent/60 animate-pulse-slow">
           <i class="fab fa-react"></i>
         </div>
-        <div class="hidden lg:block absolute -top-8 -right-8 text-2xl text-accent/60 animate-pulse-slow animation-delay-500">
+        <div class="absolute hidden text-2xl lg:block -top-8 -right-8 text-accent/60 animate-pulse-slow animation-delay-500">
           <i class="fab fa-vuejs"></i>
         </div>
-        <div class="hidden lg:block absolute top-1/2 -right-8 text-2xl text-accent/60 animate-pulse-slow animation-delay-1000">
+        <div class="absolute hidden text-2xl lg:block top-1/2 -right-8 text-accent/60 animate-pulse-slow animation-delay-1000">
           <i class="fab fa-node-js"></i>
         </div>
       </div>
       
       <!-- Contenido de texto -->
-      <div class="text-left w-full lg:w-3/5">
+      <div class="w-full text-left lg:w-3/5">
         <div class="mb-4">
-          <span class="px-4 py-1 bg-accent/10 text-accent text-sm rounded-full font-medium">Innovamos por ti</span>
+          <span class="px-4 py-1 text-sm font-medium rounded-full bg-accent/10 text-accent">Impulsamos tu éxito</span>
         </div>
         
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          <span class="text-light">Desarrollo </span>
-          <span class="text-accent">a medida</span>
-          <span class="text-light"> para tu negocio</span>
+        <h1 class="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+          <span class="text-light">Soluciones </span>
+          <span class="text-accent">Digitales</span>
+          <span class="text-light"> que transforman</span>
         </h1>
-        <p class="text-xl text-light/80 leading-relaxed mb-8">
-          Nos enfocamos en crear soluciones digitales que transforman ideas en experiencias excepcionales.
+        <p class="mb-8 text-xl leading-relaxed text-light/80">
+          Creamos experiencias únicas que combinan diseño, tecnología y estrategia para llevar tu negocio al siguiente nivel.
         </p>
         
-
-        
         <div class="flex flex-wrap gap-4 mt-8">
-          <a href="#proyectos" class="btn btn-primary btn-lg text-dark font-bold">
-            Ver proyectos
-            <i class="fas fa-arrow-right ml-2"></i>
+          <a href="#proyectos" class="font-bold btn btn-primary btn-lg text-dark">
+            Explorar proyectos
+            <i class="ml-2 fas fa-arrow-right"></i>
           </a>
           <a href="#contacto" class="btn btn-outline btn-lg btn-primary group">
-            Hablemos
-            <i class="fas fa-comment ml-2 group-hover:translate-x-1 transition-transform"></i>
+            Contáctanos
+            <i class="ml-2 transition-transform fas fa-comment group-hover:translate-x-1"></i>
           </a>
         </div>
       </div>
     </div>
     
     <div class="absolute bottom-12 animate-bounce">
-      <a href="#proyectos" class="text-accent/80 hover:text-accent transition-colors">
-        <i class="fas fa-chevron-down text-2xl"></i>
+      <a href="#nosotros" class="transition-colors text-accent/80 hover:text-accent">
+        <i class="text-2xl fas fa-chevron-down"></i>
       </a>
     </div>
   </div>

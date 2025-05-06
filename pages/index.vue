@@ -1,6 +1,7 @@
 <template>
   <div>
     <HeroDev />
+    <Nosotros />
     <ProyectosDev />
     <ContactoDev />
   </div>
@@ -11,4 +12,5 @@
 import HeroDev from '~/components/HeroDev.vue'
 import ProyectosDev from '~/components/ProyectosDev.vue'
 import ContactoDev from '~/components/ContactoDev.vue'
+import Nosotros from '~/components/nosotros.vue'
 </script>
