@@ -81,15 +81,6 @@
               </a>
             </div>
           </div>
-          
-          <!-- Testimonio o cita -->
-          <div class="p-6 mt-10 border-l-4 bg-dark/50 rounded-xl border-accent">
-            <p class="mb-4 italic text-light/80">
-              "El equipo de Dev2You transformó nuestra idea en una solución digital 
-              excepcional que superó nuestras expectativas."
-            </p>
-            <p class="font-medium text-accent">— Cliente satisfecho</p>
-          </div>
         </div>
         
         <!-- Formulario de contacto mejorado -->
@@ -185,7 +176,7 @@
             <div class="mt-8 form-control">
               <button 
                 type="submit" 
-                class="w-full font-bold btn btn-primary text-dark md:w-auto"
+                class="hidden px-5 py-2 text-sm font-semibold tracking-wide transition-transform duration-300 rounded-lg shadow-md lg:inline-block bg-accent text-dark hover:scale-105 hover:shadow-lg"
                 :class="{ 'loading': isSubmitting }"
                 :disabled="isSubmitting"
               >

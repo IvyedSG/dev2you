@@ -16,6 +16,8 @@
           <li><a href="/" class="transition-colors hover:text-accent">Inicio</a></li>
           <li><a href="#proyectos" class="transition-colors hover:text-accent">Proyectos</a></li>
           <li><a href="#equipo" class="transition-colors hover:text-accent">Equipo</a></li>
+          <li><a href="#proceso" class="transition-colors hover:text-accent">Paso a paso</a></li>
+          <li><a href="#faq" class="transition-colors hover:text-accent">Preguntas Frecuentes</a></li>
         </ul>
       </div>
 
@@ -25,6 +27,8 @@
           <li><a href="/" class="transition-colors hover:text-accent">Inicio</a></li>
           <li><a href="#proyectos" class="transition-colors hover:text-accent">Proyectos</a></li>
           <li><a href="#equipo" class="transition-colors hover:text-accent">Equipo</a></li>
+          <li><a href="#proceso" class="transition-colors hover:text-accent">Paso a paso</a></li>
+          <li><a href="#faq" class="transition-colors hover:text-accent">Preguntas Frecuentes</a></li>
         </ul>
       </nav>
 
