@@ -8,7 +8,7 @@
     <div class="container relative z-10 px-4 mx-auto">
       <div class="grid grid-cols-1 gap-10 mb-12 md:grid-cols-3">
         <!-- Columna 1: Sobre nosotros -->
-        <div class="animate-fade-in">
+        <div>
           <h4 class="mb-4 text-2xl font-bold text-accent">Dev2You</h4>
           <p class="leading-relaxed text-light/70">
             Creamos productos digitales con personalidad, centrados en la experiencia del usuario y desarrollados con tecnologías de vanguardia.
@@ -30,7 +30,7 @@
         </div>
 
         <!-- Columna 2: Enlaces -->
-        <div class="delay-200 animate-fade-in">
+        <div>
           <h4 class="mb-4 text-2xl font-bold text-accent">Enlaces</h4>
           <ul class="space-y-3 text-light/70">
             <li>
@@ -43,13 +43,19 @@
               <a href="#equipo" class="transition duration-300 hover:text-accent hover:translate-x-1">Nuestro equipo</a>
             </li>
             <li>
+              <a href="#proceso" class="transition duration-300 hover:text-accent hover:translate-x-1">Paso a Paso</a>
+            </li>
+            <li>
+              <a href="#faq" class="transition duration-300 hover:text-accent hover:translate-x-1">Preguntas Frecuentes</a>
+            </li>
+            <li>
               <a href="#contacto" class="transition duration-300 hover:text-accent hover:translate-x-1">Contacto</a>
             </li>
           </ul>
         </div>
 
         <!-- Columna 3: Contacto -->
-        <div class="animate-fade-in delay-400">
+        <div>
           <h4 class="mb-4 text-2xl font-bold text-accent">Contacto</h4>
           <ul class="space-y-4 text-light/70">
             <li class="flex items-start gap-3">
@@ -72,39 +78,20 @@
         </div>
       </div>
 
-      <div class="pt-6 text-sm text-center border-t border-light/10 text-light/50 animate-fade-in delay-600">
+      <!-- Línea divisoria -->
+      <div class="border-t border-light/10"></div>
+
+      <!-- Derechos reservados -->
+      <div class="pt-6 text-sm text-center text-light/50">
         <p>© 2025 Dev2You. Todos los derechos reservados.</p>
+        <p class="mt-2">
+          Desarrollado con <span class="text-accent">❤</span> por <a href="#" class="hover:text-accent">Dev2You Team</a>.
+        </p>
       </div>
     </div>
   </footer>
 </template>
 
 <style scoped>
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-.animate-fade-in.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.animate-fade-in.delay-400 {
-  animation-delay: 0.4s;
-}
-
-.animate-fade-in.delay-600 {
-  animation-delay: 0.6s;
-}
+/* Se eliminan las animaciones */
 </style>

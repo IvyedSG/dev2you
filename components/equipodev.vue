@@ -7,20 +7,21 @@
 
     <div class="container px-4 mx-auto text-center">
       <!-- Título -->
-      <h2 class="mb-4 text-4xl font-extrabold tracking-tight md:text-5xl">
-        <span class="text-light">Nuestro </span><span class="text-accent">Equipo</span>
-      </h2>
-      <div class="w-24 h-1 mx-auto mb-8 rounded-full bg-accent"></div>
-      
-      <!-- Descripción -->
-      <p class="max-w-2xl mx-auto mb-12 text-lg text-light/70">
-        Conformamos un equipo multidisciplinario apasionado por la tecnología y el diseño, trabajando juntos para crear soluciones digitales innovadoras y personalizadas.
-      </p>
+      <div class="mb-16 text-center">
+        <p class="mb-2 font-semibold tracking-widest uppercase text-accent">Nuestro Equipo</p>
+        <h2 class="mb-4 text-4xl font-bold md:text-5xl">
+          <span class="text-light">Conoce a </span><span class="text-accent">Nuestro Equipo</span>
+        </h2>
+        <div class="w-24 h-1 mx-auto mb-8 bg-accent"></div>
+        <p class="max-w-2xl mx-auto text-lg text-light/70">
+          Conformamos un equipo multidisciplinario apasionado por la tecnología y el diseño, trabajando juntos para crear soluciones digitales innovadoras y personalizadas.
+        </p>
+      </div>
 
       <!-- Miembros del equipo -->
       <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div
-          class="p-8 transition-all duration-300 border shadow-md group rounded-xl bg-dark border-gray-700/40 hover:border-accent hover:shadow-accent/30"
+          class="p-8 transition-all duration-300 border rounded-xl bg-dark border-gray-700/40 shadow-md hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]"
           v-for="member in teamMembers"
           :key="member.name"
         >
@@ -90,5 +91,4 @@ export default {
 </script>
 
 <style scoped>
-/* Puedes ajustar iconos u otros elementos aquí si usas fuentes personalizadas */
 </style>
