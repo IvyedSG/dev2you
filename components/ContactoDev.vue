@@ -132,6 +132,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import emailjs from 'emailjs-com'
 
 const form = ref({
   nombre: '',
@@ -140,8 +141,6 @@ const form = ref({
   empresa: '',
   asunto: '',
   mensaje: '',
-  preferencia: 'Email',
-  recibirNoticias: false,
 })
 
 const errors = ref({
@@ -184,22 +183,36 @@ const validateForm = () => {
 }
 
 const handleSubmit = () => {
-  if (validateForm()) {
-    console.log('Formulario enviado:', form.value)
-    successMessage.value = '¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.'
-    form.value = {
-      nombre: '',
-      correo: '',
-      telefono: '',
-      empresa: '',
-      asunto: '',
-      mensaje: '',
-      preferencia: 'Email',
-      recibirNoticias: false,
-    } // Reiniciar formulario
-    setTimeout(() => {
-      successMessage.value = ''
-    }, 5000) // Ocultar mensaje de éxito después de 5 segundos
+  if (!validateForm()) return
+
+  const templateParams = {
+    name: form.value.nombre,
+    email: form.value.correo,
+    phone: form.value.telefono || 'No proporcionado',
+    company: form.value.empresa || 'No proporcionado',
+    subject: form.value.asunto,
+    message: form.value.mensaje,
+    time: new Date().toLocaleString(),
   }
+
+  emailjs
+    .send('service_zm07yfs', 'template_oaroutr', templateParams, '3IJgr48Jk9eQTyKK9')
+    .then(() => {
+      successMessage.value = '¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.'
+      form.value = {
+        nombre: '',
+        correo: '',
+        telefono: '',
+        empresa: '',
+        asunto: '',
+        mensaje: '',
+      }
+      setTimeout(() => {
+        successMessage.value = ''
+      }, 5000)
+    })
+    .catch((error) => {
+      console.error('Error al enviar el mensaje:', error)
+    })
 }
 </script>
