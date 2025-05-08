@@ -30,14 +30,7 @@
             class="px-6 py-3 text-base font-semibold tracking-wide transition-transform duration-300 rounded-lg shadow-md bg-accent text-dark hover:scale-105 hover:shadow-lg"
           >
             Explorar proyectos
-          </a>
-          <!-- Botón "Contáctanos" -->
-          <a
-            href="#contacto"
-            class="px-6 py-3 text-base font-semibold tracking-wide transition-transform duration-300 rounded-lg shadow-md bg-accent text-dark hover:scale-105 hover:shadow-lg"
-          >
-            Contáctanos
-          </a>
+          </a>        
         </div>
       </div>
 

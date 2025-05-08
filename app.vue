@@ -1,5 +1,5 @@
 <template>
-  <div data-theme="dev2you">
+  <div data-theme="dev4you">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -10,7 +10,7 @@
 <script setup>
 // Configurar metadatos globales del sitio
 useHead({
-  titleTemplate: 'Dev2You',
+  titleTemplate: 'Dev4You',
   meta: [
     { name: 'description', content: 'Creamos productos digitales únicos con enfoque en diseño y experiencia de usuario.' }
   ],

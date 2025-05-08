@@ -26,36 +26,13 @@
           class="overflow-hidden transition-all duration-500 transform group hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/30 rounded-xl backdrop-blur-md bg-dark/70"
         >
           <div class="h-full card">
-            <!-- Carrusel -->
+            <!-- Imagen única -->
             <div class="relative w-full h-64 overflow-hidden">
-              <div class="relative w-full h-full">
-                <img
-                  v-for="(img, i) in proyecto.gallery"
-                  :key="i"
-                  :src="img"
-                  :alt="proyecto.title"
-                  class="absolute inset-0 object-cover w-full h-full transition-opacity duration-700"
-                  :class="{ 'opacity-100': proyecto.currentImage === i, 'opacity-0': proyecto.currentImage !== i }"
-                />
-              </div>
-
-              <!-- Flechas -->
-              <button
-                class="absolute flex items-center justify-center text-light -translate-y-1/2 rounded-full shadow-md left-3 top-1/2 bg-black/50 hover:bg-black/70 w-9 h-9"
-                @click="prevImage(pIndex)"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                class="absolute flex items-center justify-center text-light -translate-y-1/2 rounded-full shadow-md right-3 top-1/2 bg-black/50 hover:bg-black/70 w-9 h-9"
-                @click="nextImage(pIndex)"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+              <img
+                :src="proyecto.image"
+                :alt="proyecto.title"
+                class="absolute inset-0 object-cover w-full h-full"
+              />
             </div>
 
             <!-- Contenido -->
@@ -83,7 +60,7 @@
 </template>
 
 <script setup>
-import { reactive, onMounted, onBeforeUnmount } from 'vue'
+import { reactive } from 'vue'
 
 const proyectos = reactive([
   {
@@ -92,8 +69,7 @@ const proyectos = reactive([
     year: '2024',
     description: 'Repify es un puente entre estudiantes y proyectos interesantes.',
     badges: ['Next.js', 'Tailwind', 'Shadcn', 'Amplify'],
-    gallery: ['/repify/repify2.webp', '/repify/repify3.webp', '/repify/repify4.webp'],
-    currentImage: 0
+    image: '/repify.png'
   },
   {
     id: 'delivery',
@@ -101,8 +77,7 @@ const proyectos = reactive([
     year: '2023',
     description: 'Página para tomar asistencia de estudiantes con gestión de sesiones y cursos.',
     badges: ['ViteJs', 'React', 'Cloud', 'Docker', 'Material UI'],
-    gallery: ['/superlearner/sl1.webp', '/superlearner/sl3.webp'],
-    currentImage: 0
+    image: '/superlearnerr.png'
   },
   {
     id: 'educational',
@@ -110,29 +85,7 @@ const proyectos = reactive([
     year: '2022',
     description: 'Foro creado para estudiantes con la función de ver y calificar profesores.',
     badges: ['HTML5', 'CSS3', 'JavaScript', 'Boostrap'],
-    gallery: ['/forua/forua2.png', '/forua/forua3.png'],
-    currentImage: 0
+    image: '/forua/forua2.png'
   }
 ])
-
-function nextImage(index) {
-  const proyecto = proyectos[index]
-  proyecto.currentImage = (proyecto.currentImage + 1) % proyecto.gallery.length
-}
-
-function prevImage(index) {
-  const proyecto = proyectos[index]
-  proyecto.currentImage = (proyecto.currentImage - 1 + proyecto.gallery.length) % proyecto.gallery.length
-}
-
-let interval
-onMounted(() => {
-  interval = setInterval(() => {
-    proyectos.forEach((_, i) => nextImage(i))
-  }, 5000)
-})
-
-onBeforeUnmount(() => {
-  clearInterval(interval)
-})
 </script>
