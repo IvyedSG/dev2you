@@ -73,22 +73,28 @@
         </div>
 
         <!-- Asunto -->
-        <div class="md:col-span-2">
-          <label for="asunto" class="block mb-2 text-sm font-medium text-light">Asunto *</label>
-          <select
-            id="asunto"
-            v-model="form.asunto"
-            required
-            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-          >
-            <option value="" disabled selected>Selecciona un asunto</option>
-            <option value="Consulta general">Consulta general</option>
-            <option value="Soporte técnico">Soporte técnico</option>
-            <option value="Cotización">Cotización</option>
-            <option value="Otro">Otro</option>
-          </select>
-          <p v-if="errors.asunto" class="mt-1 text-sm text-red-500">{{ errors.asunto }}</p>
-        </div>
+<div class="md:col-span-2">
+  <label for="asunto" class="block mb-2 text-sm font-medium text-light">Asunto *</label>
+  <div class="relative">
+    <select
+      id="asunto"
+      v-model="form.asunto"
+      required
+      class="w-full px-4 py-3 pl-12 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent appearance-none"
+    >
+      <option value="" disabled selected>Selecciona un asunto</option>
+      <option value="Consulta general">Consulta general</option>
+      <option value="Soporte técnico">Soporte técnico</option>
+      <option value="Cotización">Cotización</option>
+      <option value="Otro">Otro</option>
+    </select>
+    <!-- Ícono decorativo -->
+    <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-accent">
+      <i class="fas fa-tag"></i>
+    </div>
+  </div>
+  <p v-if="errors.asunto" class="mt-1 text-sm text-red-500">{{ errors.asunto }}</p>
+</div>
 
         <!-- Mensaje -->
         <div class="md:col-span-2">
@@ -105,29 +111,6 @@
         </div>
 
         <!-- Preferencia de contacto -->
-        <div class="md:col-span-2">
-          <label class="block mb-2 text-sm font-medium text-light">Preferencia de contacto</label>
-          <div class="flex items-center gap-4">
-            <label class="flex items-center gap-2 text-light">
-              <input
-                type="radio"
-                value="Email"
-                v-model="form.preferencia"
-                class="text-accent focus:ring-accent"
-              />
-              Email
-            </label>
-            <label class="flex items-center gap-2 text-light">
-              <input
-                type="radio"
-                value="Teléfono"
-                v-model="form.preferencia"
-                class="text-accent focus:ring-accent"
-              />
-              Teléfono
-            </label>
-          </div>
-        </div>
         <!-- Botón Enviar -->
         <div class="md:col-span-2 text-center">
           <button
