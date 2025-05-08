@@ -5,80 +5,218 @@
     <div class="absolute bottom-0 right-0 w-1/3 rounded-full h-1/3 bg-accent/5 filter blur-3xl"></div>
     <div class="absolute rounded-full top-40 left-20 w-72 h-72 bg-accent/5 filter blur-3xl"></div>
 
-    <div class="relative z-10 px-4 mx-auto max-w-7xl">
+    <div class="relative z-10 px-4 mx-auto max-w-6xl">
       <!-- Encabezado -->
       <div class="mb-16 text-center">
         <p class="mb-2 font-semibold tracking-widest uppercase text-accent">Contáctanos</p>
         <h2 class="mb-4 text-4xl font-bold md:text-5xl">
-          <span class="text-light">Contacta con </span><span class="text-accent">Nosotros</span>
+          <span class="text-light">Envíanos un </span><span class="text-accent">Mensaje</span>
         </h2>
         <div class="w-24 h-1 mx-auto mb-8 bg-accent"></div>
         <p class="mt-4 text-lg text-light/70 max-w-2xl mx-auto">
-          Estamos listos para convertir tus ideas en soluciones digitales excepcionales.
+          Completa el formulario y nos pondremos en contacto contigo lo antes posible.
         </p>
       </div>
 
-      <!-- Tarjetas de contacto -->
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-12">
-        <!-- Email -->
-        <div class="p-6 text-center rounded-2xl border border-accent/10 bg-gray-800/50 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]">
-          <div class="flex justify-center mb-4">
-            <i class="fas fa-envelope text-2xl text-accent"></i>
-          </div>
-          <h4 class="mb-1 font-semibold text-light">Email</h4>
-          <a href="mailto:contacto@dev2you.com" class="text-light/70 hover:text-accent transition">
-            contacto@dev2you.com
-          </a>
+      <!-- Formulario -->
+      <form @submit.prevent="handleSubmit" class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <!-- Nombre -->
+        <div>
+          <label for="nombre" class="block mb-2 text-sm font-medium text-light">Nombre *</label>
+          <input
+            type="text"
+            id="nombre"
+            v-model="form.nombre"
+            required
+            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            placeholder="Tu nombre"
+          />
+          <p v-if="errors.nombre" class="mt-1 text-sm text-red-500">{{ errors.nombre }}</p>
+        </div>
+
+        <!-- Correo -->
+        <div>
+          <label for="correo" class="block mb-2 text-sm font-medium text-light">Correo Electrónico *</label>
+          <input
+            type="email"
+            id="correo"
+            v-model="form.correo"
+            required
+            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            placeholder="tu@email.com"
+          />
+          <p v-if="errors.correo" class="mt-1 text-sm text-red-500">{{ errors.correo }}</p>
         </div>
 
         <!-- Teléfono -->
-        <div class="p-6 text-center rounded-2xl border border-accent/10 bg-gray-800/50 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]">
-          <div class="flex justify-center mb-4">
-            <i class="fas fa-phone-alt text-2xl text-accent"></i>
+        <div>
+          <label for="telefono" class="block mb-2 text-sm font-medium text-light">Teléfono (opcional)</label>
+          <input
+            type="tel"
+            id="telefono"
+            v-model="form.telefono"
+            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            placeholder="+51 987 654 321"
+          />
+        </div>
+
+        <!-- Empresa -->
+        <div>
+          <label for="empresa" class="block mb-2 text-sm font-medium text-light">Empresa (opcional)</label>
+          <input
+            type="text"
+            id="empresa"
+            v-model="form.empresa"
+            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            placeholder="Nombre de tu empresa"
+          />
+        </div>
+
+        <!-- Asunto -->
+        <div class="md:col-span-2">
+          <label for="asunto" class="block mb-2 text-sm font-medium text-light">Asunto *</label>
+          <select
+            id="asunto"
+            v-model="form.asunto"
+            required
+            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            <option value="" disabled selected>Selecciona un asunto</option>
+            <option value="Consulta general">Consulta general</option>
+            <option value="Soporte técnico">Soporte técnico</option>
+            <option value="Cotización">Cotización</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <p v-if="errors.asunto" class="mt-1 text-sm text-red-500">{{ errors.asunto }}</p>
+        </div>
+
+        <!-- Mensaje -->
+        <div class="md:col-span-2">
+          <label for="mensaje" class="block mb-2 text-sm font-medium text-light">Mensaje *</label>
+          <textarea
+            id="mensaje"
+            v-model="form.mensaje"
+            required
+            rows="5"
+            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            placeholder="¿En qué podemos ayudarte?"
+          ></textarea>
+          <p v-if="errors.mensaje" class="mt-1 text-sm text-red-500">{{ errors.mensaje }}</p>
+        </div>
+
+        <!-- Preferencia de contacto -->
+        <div class="md:col-span-2">
+          <label class="block mb-2 text-sm font-medium text-light">Preferencia de contacto</label>
+          <div class="flex items-center gap-4">
+            <label class="flex items-center gap-2 text-light">
+              <input
+                type="radio"
+                value="Email"
+                v-model="form.preferencia"
+                class="text-accent focus:ring-accent"
+              />
+              Email
+            </label>
+            <label class="flex items-center gap-2 text-light">
+              <input
+                type="radio"
+                value="Teléfono"
+                v-model="form.preferencia"
+                class="text-accent focus:ring-accent"
+              />
+              Teléfono
+            </label>
           </div>
-          <h4 class="mb-1 font-semibold text-light">Teléfono</h4>
-          <a href="tel:+51987654321" class="text-light/70 hover:text-accent transition">
-            +51 987 654 321
-          </a>
         </div>
-
-        <!-- Ubicación -->
-        <div class="p-6 text-center rounded-2xl border border-accent/10 bg-gray-800/50 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]">
-          <div class="flex justify-center mb-4">
-            <i class="fas fa-map-marker-alt text-2xl text-accent"></i>
-          </div>
-          <h4 class="mb-1 font-semibold text-light">Ubicación</h4>
-          <p class="text-light/70">Lima, Perú</p>
+        <!-- Botón Enviar -->
+        <div class="md:col-span-2 text-center">
+          <button
+            type="submit"
+            class="px-6 py-3 text-base font-semibold tracking-wide text-dark bg-accent rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
+          >
+            <i class="fas fa-paper-plane mr-2"></i> Enviar mensaje
+          </button>
         </div>
-      </div>
+      </form>
 
-      <!-- Canales adicionales -->
-      <div class="p-6 rounded-2xl border border-accent/10 bg-gray-800/50 shadow-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,255,200,0.2)]">
-        <h4 class="mb-4 font-semibold text-light flex items-center">
-          <i class="fas fa-share-alt mr-2 text-accent"></i> Canales adicionales
-        </h4>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <!-- WhatsApp -->
-          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-800 rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
-            <i class="fab fa-whatsapp text-lg"></i> WhatsApp
-          </a>
-
-          <!-- Microsoft Teams -->
-          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-800 rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
-            <i class="fab fa-microsoft text-lg"></i> Teams
-          </a>
-
-          <!-- Discord -->
-          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-800 rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
-            <i class="fab fa-discord text-lg"></i> Discord
-          </a>
-
-          <!-- Zoom -->
-          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-800 rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
-            <i class="fas fa-video text-lg"></i> Zoom
-          </a>
-        </div>
+      <!-- Mensaje de éxito -->
+      <div v-if="successMessage" class="mt-6 text-center text-green-500">
+        {{ successMessage }}
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+const form = ref({
+  nombre: '',
+  correo: '',
+  telefono: '',
+  empresa: '',
+  asunto: '',
+  mensaje: '',
+  preferencia: 'Email',
+  recibirNoticias: false,
+})
+
+const errors = ref({
+  nombre: null,
+  correo: null,
+  asunto: null,
+  mensaje: null,
+})
+
+const successMessage = ref('')
+
+const validateForm = () => {
+  let isValid = true
+  errors.value = { nombre: null, correo: null, asunto: null, mensaje: null }
+
+  if (!form.value.nombre.trim()) {
+    errors.value.nombre = 'El nombre es obligatorio.'
+    isValid = false
+  }
+
+  if (!form.value.correo.trim()) {
+    errors.value.correo = 'El correo electrónico es obligatorio.'
+    isValid = false
+  } else if (!/\S+@\S+\.\S+/.test(form.value.correo)) {
+    errors.value.correo = 'El correo electrónico no es válido.'
+    isValid = false
+  }
+
+  if (!form.value.asunto.trim()) {
+    errors.value.asunto = 'El asunto es obligatorio.'
+    isValid = false
+  }
+
+  if (!form.value.mensaje.trim()) {
+    errors.value.mensaje = 'El mensaje es obligatorio.'
+    isValid = false
+  }
+
+  return isValid
+}
+
+const handleSubmit = () => {
+  if (validateForm()) {
+    console.log('Formulario enviado:', form.value)
+    successMessage.value = '¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.'
+    form.value = {
+      nombre: '',
+      correo: '',
+      telefono: '',
+      empresa: '',
+      asunto: '',
+      mensaje: '',
+      preferencia: 'Email',
+      recibirNoticias: false,
+    } // Reiniciar formulario
+    setTimeout(() => {
+      successMessage.value = ''
+    }, 5000) // Ocultar mensaje de éxito después de 5 segundos
+  }
+}
+</script>
