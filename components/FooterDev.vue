@@ -1,5 +1,5 @@
 <template>
-  <footer class="relative py-16 overflow-hidden bg-gray-dark text-light">
+  <footer class="relative py-16 overflow-hidden bg-dark text-light">
     <!-- Fondos decorativos -->
     <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-gray-dark to-transparent opacity-80"></div>
     <div class="absolute rounded-full -top-20 right-20 w-72 h-72 bg-accent/10 filter blur-3xl"></div>
@@ -83,7 +83,6 @@
 
       <!-- Derechos reservados -->
       <div class="pt-6 text-sm text-center text-light/50">
-        <p>© 2025 Dev2You. Todos los derechos reservados.</p>
         <p class="mt-2">
           Desarrollado con <span class="text-accent">❤</span> por <a href="#" class="hover:text-accent">Dev2You Team</a>.
         </p>

@@ -1,5 +1,5 @@
 <template>
-  <section id="faq" class="relative py-24 overflow-hidden text-white bg-dark">
+  <section id="faq" class="relative py-24 overflow-hidden bg-dark">
     <!-- Fondo decorativo -->
     <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-gray-dark to-transparent opacity-80"></div>
     <div class="absolute rounded-full -top-20 right-20 w-72 h-72 bg-accent/10 filter blur-3xl"></div>
@@ -31,7 +31,7 @@
             :aria-expanded="openIndex === index"
             :aria-controls="`faq-answer-${index}`"
           >
-            <span class="text-lg font-medium text-white">{{ faq.question }}</span>
+            <span class="text-lg font-medium text-light">{{ faq.question }}</span>
             <div class="flex items-center justify-center w-8 h-8 transition-transform duration-300 rounded-full bg-gray-700/50 text-accent">
               <Icon
                 :name="openIndex === index ? 'lucide:chevron-up' : 'lucide:chevron-down'"
@@ -44,7 +44,7 @@
             class="overflow-hidden transition-all duration-300 ease-in-out"
             :class="openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'"
           >
-            <div class="px-6 py-5 leading-relaxed border-t border-gray-700/40 text-white/80">
+            <div class="px-6 py-5 leading-relaxed border-t border-gray-700/40 text-light/80">
               {{ faq.answer }}
             </div>
           </div>

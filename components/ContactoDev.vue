@@ -21,7 +21,7 @@
       <!-- Tarjetas de contacto -->
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-12">
         <!-- Email -->
-        <div class="p-6 text-center rounded-2xl border border-accent/10 bg-gray-dark/70 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]">
+        <div class="p-6 text-center rounded-2xl border border-accent/10 bg-gray-800/50 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]">
           <div class="flex justify-center mb-4">
             <i class="fas fa-envelope text-2xl text-accent"></i>
           </div>
@@ -32,7 +32,7 @@
         </div>
 
         <!-- Teléfono -->
-        <div class="p-6 text-center rounded-2xl border border-accent/10 bg-gray-dark/70 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]">
+        <div class="p-6 text-center rounded-2xl border border-accent/10 bg-gray-800/50 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]">
           <div class="flex justify-center mb-4">
             <i class="fas fa-phone-alt text-2xl text-accent"></i>
           </div>
@@ -43,7 +43,7 @@
         </div>
 
         <!-- Ubicación -->
-        <div class="p-6 text-center rounded-2xl border border-accent/10 bg-gray-dark/70 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]">
+        <div class="p-6 text-center rounded-2xl border border-accent/10 bg-gray-800/50 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]">
           <div class="flex justify-center mb-4">
             <i class="fas fa-map-marker-alt text-2xl text-accent"></i>
           </div>
@@ -53,28 +53,28 @@
       </div>
 
       <!-- Canales adicionales -->
-      <div class="p-6 rounded-2xl border border-accent/10 bg-gray-dark/70 shadow-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,255,200,0.2)]">
+      <div class="p-6 rounded-2xl border border-accent/10 bg-gray-800/50 shadow-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,255,200,0.2)]">
         <h4 class="mb-4 font-semibold text-light flex items-center">
           <i class="fas fa-share-alt mr-2 text-accent"></i> Canales adicionales
         </h4>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <!-- WhatsApp -->
-          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-dark rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
+          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-800 rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
             <i class="fab fa-whatsapp text-lg"></i> WhatsApp
           </a>
 
           <!-- Microsoft Teams -->
-          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-dark rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
+          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-800 rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
             <i class="fab fa-microsoft text-lg"></i> Teams
           </a>
 
           <!-- Discord -->
-          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-dark rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
+          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-800 rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
             <i class="fab fa-discord text-lg"></i> Discord
           </a>
 
           <!-- Zoom -->
-          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-dark rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
+          <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gray-800 rounded-xl hover:bg-accent/10 transition text-accent border border-transparent hover:border-accent hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] hover:scale-[1.02]">
             <i class="fas fa-video text-lg"></i> Zoom
           </a>
         </div>

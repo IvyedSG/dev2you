@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed top-0 z-50 w-full px-4 border-b shadow-sm bg-dark/90 backdrop-blur-md border-gray-800/50">
+  <header class="fixed top-0 z-50 w-full px-4 shadow-sm bg-dark/90 backdrop-blur-md">
     <div class="container mx-auto flex items-center justify-between py-4">
       <!-- Logo -->
       <a
@@ -88,7 +88,7 @@ watch(isMenuOpen, (value) => {
   align-items: center;
   text-align: center;
   height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
-  background-color: #1a1a1a; /* Fondo sólido para el menú móvil */
+  background-color: #0F0F0F; /* Fondo sólido para el menú móvil */
 }
 
 .fixed.inset-0 a {

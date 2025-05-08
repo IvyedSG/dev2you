@@ -41,7 +41,7 @@
 
               <!-- Flechas -->
               <button
-                class="absolute flex items-center justify-center text-white -translate-y-1/2 rounded-full shadow-md left-3 top-1/2 bg-black/50 hover:bg-black/70 w-9 h-9"
+                class="absolute flex items-center justify-center text-light -translate-y-1/2 rounded-full shadow-md left-3 top-1/2 bg-black/50 hover:bg-black/70 w-9 h-9"
                 @click="prevImage(pIndex)"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -49,7 +49,7 @@
                 </svg>
               </button>
               <button
-                class="absolute flex items-center justify-center text-white -translate-y-1/2 rounded-full shadow-md right-3 top-1/2 bg-black/50 hover:bg-black/70 w-9 h-9"
+                class="absolute flex items-center justify-center text-light -translate-y-1/2 rounded-full shadow-md right-3 top-1/2 bg-black/50 hover:bg-black/70 w-9 h-9"
                 @click="nextImage(pIndex)"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

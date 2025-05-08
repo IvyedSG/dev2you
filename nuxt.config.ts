@@ -2,19 +2,24 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  css: ['~/assets/main.css'],
+  css: ["~/assets/main.css"],
   vite: {
-    plugins:[
-      tailwindcss()
-    ],
+    plugins: [tailwindcss()],
   },
   modules: [
-    '@nuxt/content',
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/image'
-  ]
-})
+    "@nuxt/content",
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@nuxt/image",
+  ],
+  app: {
+    head: {
+      htmlAttrs: {
+        class: "dark", // Forzar el modo oscuro
+      },
+    },
+  },
+});

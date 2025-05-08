@@ -9,7 +9,9 @@
       <!-- Contenido de texto -->
       <div class="w-full text-center lg:text-left lg:w-3/5 flex flex-col items-center lg:items-start">
         <div class="mb-6">
-          <span class="px-6 py-2 text-base font-semibold tracking-widest rounded-full bg-accent/10 text-accent">Impulsamos tu éxito</span>
+          <span class="px-6 py-2 text-base font-semibold tracking-widest rounded-full bg-accent/10 text-accent">
+            Impulsamos tu éxito
+          </span>
         </div>
 
         <h1 class="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">

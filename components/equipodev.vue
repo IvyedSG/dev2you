@@ -1,5 +1,5 @@
 <template>
-  <section id="equipo" class="relative py-28 bg-gray-dark">
+  <section id="equipo" class="relative py-28 bg-dark">
     <!-- Fondo decorativo -->
     <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-gray-dark to-transparent opacity-80"></div>
     <div class="absolute rounded-full -top-20 right-20 w-72 h-72 bg-accent/10 filter blur-3xl"></div>
@@ -8,7 +8,6 @@
     <div class="container px-4 mx-auto text-center">
       <!-- Título -->
       <div class="mb-16 text-center">
-        <p class="mb-2 font-semibold tracking-widest uppercase text-accent">Nuestro Equipo</p>
         <h2 class="mb-4 text-4xl font-bold md:text-5xl">
           <span class="text-light">Conoce a </span><span class="text-accent">Nuestro Equipo</span>
         </h2>
@@ -21,21 +20,24 @@
       <!-- Miembros del equipo -->
       <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div
-          class="p-8 transition-all duration-300 border rounded-xl bg-dark border-gray-700/40 shadow-md hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]"
+          class="p-8 transition-all duration-300 border rounded-xl bg-dark/70 border-gray-700/40 shadow-md hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]"
           v-for="member in teamMembers"
           :key="member.name"
         >
+          <!-- Ícono del miembro -->
           <div class="flex items-center justify-center mb-5">
             <i class="text-4xl fas fa-user-circle text-accent"></i>
           </div>
+          <!-- Nombre y rol -->
           <h3 class="mb-2 text-xl font-semibold text-light">{{ member.name }}</h3>
           <p class="mb-4 text-sm leading-relaxed text-light/70">{{ member.role }}</p>
+          <!-- Redes sociales -->
           <div class="flex justify-center gap-4">
             <a
               :href="member.github"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-accent hover:text-light"
+              class="text-accent hover:text-light transition-transform hover:scale-110"
             >
               <i class="text-2xl fab fa-github"></i>
             </a>
@@ -43,7 +45,7 @@
               :href="member.linkedin"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-accent hover:text-light"
+              class="text-accent hover:text-light transition-transform hover:scale-110"
             >
               <i class="text-2xl fab fa-linkedin"></i>
             </a>
@@ -80,7 +82,7 @@ export default {
         },
         {
           name: "Diego Inga",
-          role: "Desing UX/UI",
+          role: "Diseñador UX/UI",
           github: "https://github.com/anatorres",
           linkedin: "https://linkedin.com/in/anatorres",
         },
@@ -91,4 +93,5 @@ export default {
 </script>
 
 <style scoped>
+/* Opcional: Estilos adicionales para hover */
 </style>

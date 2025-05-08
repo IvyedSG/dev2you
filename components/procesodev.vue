@@ -35,7 +35,7 @@
 
             <!-- Ícono central -->
             <div
-              class="relative z-10 flex flex-col items-center justify-center w-full -mt-8 md:mt-0 md:absolute"
+              class="relative z-10 flex items-center justify-center w-full -mt-8 md:mt-0 md:absolute"
               :class="{
                 '-translate-x-1/2 left-1/2': index % 2 === 0,
                 'translate-x-1/2 right-1/2': index % 2 !== 0,
@@ -43,9 +43,6 @@
             >
               <div class="p-4 bg-gray-900 border-4 rounded-full shadow-lg text-accent shadow-emerald-400/20 hover:scale-110 transition-transform">
                 <component :is="paso.icon" class="w-8 h-8 text-accent" />
-              </div>
-              <div class="mt-2 text-5xl font-extrabold text-emerald-900/10">
-                {{ (index + 1).toString().padStart(2, '0') }}
               </div>
             </div>
           </div>
