@@ -18,8 +18,11 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: {
-        class: "dark", // Forzar el modo oscuro
+        class: "dark",
       },
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ]
     },
   },
 });
