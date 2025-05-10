@@ -1,6 +1,32 @@
 <template>
   <section id="proceso" class="relative py-24 overflow-hidden" :class="isDarkMode ? 'bg-dark' : 'bg-light'">
-    <div class="container px-4 mx-auto">
+    <!-- Fondos decorativos -->
+    <div
+      class="absolute top-0 left-0 w-full h-40 z-0"
+      :class="isDarkMode ? 'bg-gradient-to-b from-gray-dark to-transparent opacity-80' : 'bg-gradient-to-b from-gray-200 to-transparent opacity-80'"
+    ></div>
+    <div
+      class="absolute rounded-full -top-20 right-20 w-72 h-72 filter blur-3xl z-0"
+      :class="isDarkMode ? 'bg-accent/10' : 'bg-accent/20'"
+    ></div>
+    <div
+      class="absolute rounded-full bottom-40 left-20 w-80 h-80 filter blur-3xl z-0"
+      :class="isDarkMode ? 'bg-accent/5' : 'bg-accent/10'"
+    ></div>
+
+    <div class="container px-4 mx-auto relative z-10">
+      <!-- Título -->
+      <div class="mb-20 text-center">
+        <h2 class="mb-4 text-4xl font-bold md:text-5xl">
+          <span :class="isDarkMode ? 'text-light' : 'text-dark'">Nuestro </span>
+          <span :class="isDarkMode ? 'text-accent' : 'text-accent-dark'">Proceso de Trabajo</span>
+        </h2>
+        <div class="w-24 h-1 mx-auto mb-8" :class="isDarkMode ? 'bg-accent' : 'bg-accent-dark'"></div>
+        <p class="max-w-2xl mx-auto text-lg" :class="isDarkMode ? 'text-light/70' : 'text-dark/70'">
+          Conoce los pasos que seguimos para garantizar el éxito de cada proyecto.
+        </p>
+      </div>
+
       <!-- Timeline -->
       <div
         class="relative space-y-14 before:absolute before:top-14 before:bottom-14 before:left-1/2 before:w-[3px] md:before:block before:hidden"

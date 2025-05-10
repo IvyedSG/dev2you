@@ -138,7 +138,7 @@ const stopAutoSlide = () => {
 
     <div class="container relative z-10 px-4 mx-auto">
       <div class="mb-20 text-center">
-        <p class="mb-2 font-semibold tracking-widest uppercase text-accent">Nuestro Trabajo</p>
+        
         <h2 class="mb-4 text-4xl font-bold md:text-5xl">
           <span class="text-light">Proyectos </span><span class="text-accent">Destacados</span>
         </h2>

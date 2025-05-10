@@ -8,7 +8,7 @@
     <div class="container relative z-10 px-4 mx-auto">
       <!-- Título -->
       <div class="mb-20 text-center">
-        <p class="mb-2 font-semibold tracking-widest uppercase text-accent">FAQ</p>
+        
         <h2 class="mb-4 text-4xl font-bold md:text-5xl">
           <span class="text-light">Preguntas </span><span class="text-accent">Frecuentes</span>
         </h2>
@@ -68,7 +68,7 @@ const faqs = [
   {
     question: "¿Qué tecnologías utilizan?",
     answer:
-      "Trabajamos con tecnologías modernas como Vue.js, React, Next.js, Tailwind CSS, Node.js, y bases de datos como MySQL, PostgreSQL y MongoDB.",
+      "Trabajamos con tecnologías modernas como Vue.js, React, Next.js, Tailwind CSS, Vite, Astro, TypeScript, Django, Docker, Express, FastApi y bases de datos como MySQL, MariaDb, PostgreSQL, SQL Server y MongoDB.",
   },
   {
     question: "¿Cómo es el proceso de trabajo?",

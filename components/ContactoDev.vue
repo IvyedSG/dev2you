@@ -8,7 +8,7 @@
     <div class="relative z-10 px-4 mx-auto max-w-6xl">
       <!-- Encabezado -->
       <div class="mb-16 text-center">
-        <p class="mb-2 font-semibold tracking-widest uppercase text-accent">Contáctanos</p>
+        
         <h2 class="mb-4 text-4xl font-bold md:text-5xl">
           <span class="text-light">Envíanos un </span><span class="text-accent">Mensaje</span>
         </h2>
