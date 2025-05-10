@@ -70,7 +70,7 @@ export default {
         },
         {
           name: "Angel Choquehuanca",
-          role: "Base de Datos",
+          role: "Administrador de Base de Datos",
           github: "https://github.com/AngelCh0",
           linkedin: "https://www.linkedin.com/in/angel-fabian-choquehuanca-capia-51512b327/",
         },
@@ -82,7 +82,7 @@ export default {
         },
         {
           name: "Diego Inga",
-          role: "Diseñador UX/UI",
+          role: "Desarrollador Frontend",
           github: "https://github.com/DiegoInga",
           linkedin: "https://www.linkedin.com/in/diego-felipe-inga-silva-715555315/",
         },
