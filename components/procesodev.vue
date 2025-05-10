@@ -18,8 +18,9 @@
         </p>
       </div>
 
-      <!-- Línea vertical (timeline) -->
-      <div class="relative space-y-16 before:absolute before:inset-y-0 before:left-1/2 before:w-[1px] before:bg-accent before:-translate-x-1/2">
+      <div
+  class="relative space-y-16 before:absolute before:top-10 before:bottom-10 before:left-1/2 before:w-[1px] before:bg-accent before:-translate-x-1/2"
+>
         <template v-for="(paso, index) in pasos" :key="index">
           <div class="relative flex flex-col items-center gap-8 md:grid md:grid-cols-2 md:gap-8">
             <!-- Tarjeta izquierda (PC) o centrada (móvil) -->

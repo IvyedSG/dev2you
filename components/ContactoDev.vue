@@ -73,28 +73,22 @@
         </div>
 
         <!-- Asunto -->
-<div class="md:col-span-2">
-  <label for="asunto" class="block mb-2 text-sm font-medium text-light">Asunto *</label>
-  <div class="relative">
-    <select
-      id="asunto"
-      v-model="form.asunto"
-      required
-      class="w-full px-4 py-3 pl-12 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent appearance-none"
-    >
-      <option value="" disabled selected>Selecciona un asunto</option>
-      <option value="Consulta general">Consulta general</option>
-      <option value="Soporte técnico">Soporte técnico</option>
-      <option value="Cotización">Cotización</option>
-      <option value="Otro">Otro</option>
-    </select>
-    <!-- Ícono decorativo -->
-    <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-accent">
-      <i class="fas fa-tag"></i>
-    </div>
-  </div>
-  <p v-if="errors.asunto" class="mt-1 text-sm text-red-500">{{ errors.asunto }}</p>
-</div>
+        <div class="md:col-span-2">
+          <label for="asunto" class="block mb-2 text-sm font-medium text-light">Asunto *</label>
+          <select
+            id="asunto"
+            v-model="form.asunto"
+            required
+            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            <option value="" disabled selected>Selecciona un asunto</option>
+            <option value="Consulta general">Consulta general</option>
+            <option value="Soporte técnico">Soporte técnico</option>
+            <option value="Cotización">Cotización</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <p v-if="errors.asunto" class="mt-1 text-sm text-red-500">{{ errors.asunto }}</p>
+        </div>
 
         <!-- Mensaje -->
         <div class="md:col-span-2">
@@ -110,7 +104,6 @@
           <p v-if="errors.mensaje" class="mt-1 text-sm text-red-500">{{ errors.mensaje }}</p>
         </div>
 
-        <!-- Preferencia de contacto -->
         <!-- Botón Enviar -->
         <div class="md:col-span-2 text-center">
           <button
@@ -121,17 +114,23 @@
           </button>
         </div>
       </form>
-
-      <!-- Mensaje de éxito -->
-      <div v-if="successMessage" class="mt-6 text-center text-green-500">
-        {{ successMessage }}
-      </div>
     </div>
+      <!-- Notificación emergente -->
+      <div
+        v-if="showToast"
+        class="fixed bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transition-opacity duration-300"
+        :class="{
+          'top-20 right-5': !isMobile, // En pantallas grandes, aparece en la esquina superior derecha
+          'top-0 left-0 w-full text-center py-4 z-50': isMobile, // En móviles, ocupa toda la parte superior
+        }"
+      >
+        ¡Mensaje enviado con éxito!
+      </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import emailjs from 'emailjs-com'
 
 const form = ref({
@@ -150,7 +149,10 @@ const errors = ref({
   mensaje: null,
 })
 
-const successMessage = ref('')
+const showToast = ref(false) // Controla la visibilidad de la notificación
+
+// Detectar si es un dispositivo móvil
+const isMobile = computed(() => window.innerWidth <= 768)
 
 const validateForm = () => {
   let isValid = true
@@ -192,13 +194,16 @@ const handleSubmit = () => {
     company: form.value.empresa || 'No proporcionado',
     subject: form.value.asunto,
     message: form.value.mensaje,
-    time: new Date().toLocaleString(),
   }
 
   emailjs
-    .send('service_zm07yfs', 'template_oaroutr', templateParams, '3IJgr48Jk9eQTyKK9')
+    .send('service_sqr49yr', 'template_kwhcouf', templateParams, '9YK2OVWcvpBQxBaKF')
     .then(() => {
-      successMessage.value = '¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.'
+      showToast.value = true // Mostrar la notificación
+      setTimeout(() => {
+        showToast.value = false // Ocultar la notificación después de 5 segundos
+      }, 5000)
+
       form.value = {
         nombre: '',
         correo: '',
@@ -207,9 +212,6 @@ const handleSubmit = () => {
         asunto: '',
         mensaje: '',
       }
-      setTimeout(() => {
-        successMessage.value = ''
-      }, 5000)
     })
     .catch((error) => {
       console.error('Error al enviar el mensaje:', error)

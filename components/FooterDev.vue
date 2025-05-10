@@ -13,20 +13,6 @@
           <p class="leading-relaxed text-light/70">
             Creamos productos digitales con personalidad, centrados en la experiencia del usuario y desarrollados con tecnologías de vanguardia.
           </p>
-          <div class="flex gap-5 mt-6">
-            <a href="#" aria-label="GitHub" class="text-2xl transition duration-300 text-light/70 hover:text-accent hover:scale-110">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="#" aria-label="Twitter" class="text-2xl transition duration-300 text-light/70 hover:text-accent hover:scale-110">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn" class="text-2xl transition duration-300 text-light/70 hover:text-accent hover:scale-110">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" aria-label="Instagram" class="text-2xl transition duration-300 text-light/70 hover:text-accent hover:scale-110">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
         </div>
 
         <!-- Columna 2: Enlaces -->
@@ -61,13 +47,13 @@
             <li class="flex items-start gap-3">
               <i class="mt-1 fas fa-envelope text-accent"></i>
               <a href="mailto:hola@dev2you.com" class="transition duration-300 hover:text-accent hover:translate-x-1">
-                dev2you@gmail.com
+                contacto.dev4you@gmail.com
               </a>
             </li>
             <li class="flex items-start gap-3">
               <i class="mt-1 fas fa-phone text-accent"></i>
               <a href="tel:+1234567890" class="transition duration-300 hover:text-accent hover:translate-x-1">
-                +51 990 903 235
+                +51 923 927 406
               </a>
             </li>
             <li class="flex items-start gap-3">

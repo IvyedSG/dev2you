@@ -12,6 +12,6 @@
 
 <script setup>
 // WhatsApp phone number in international format without + or spaces
-const phoneNumber = "51987654321";
+const phoneNumber = "51923927406";
 const message = "Hola, estoy interesado en sus servicios de desarrollo. ¿Podemos hablar?";
 </script>

@@ -6,6 +6,7 @@
         href="/"
         class="flex items-center gap-2 text-2xl font-extrabold tracking-tight group"
       >
+        <span class="text-accent">&lt;/&gt;</span> <!-- Etiquetas de código -->
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/80">Dev4</span>
         <span class="transition-colors duration-300 text-light group-hover:text-accent">You</span>
       </a>
