@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watchEffect } from 'vue'
+import { ref, computed, onMounted, onUnmounted} from 'vue'
 
 const baseProyectos = [
   {
@@ -8,7 +8,7 @@ const baseProyectos = [
     year: '2024',
     description: 'Repify es un puente entre estudiantes y proyectos interesantes.',
     badges: ['Next.js', 'Tailwind', 'Shadcn', 'Amplify'],
-    image: '/repify.png'
+    image: '/repify.webp'
   },
   {
     id: 'delivery',
@@ -16,7 +16,7 @@ const baseProyectos = [
     year: '2023',
     description: 'Página para tomar asistencia de estudiantes con gestión de sesiones y cursos.',
     badges: ['ViteJs', 'React', 'Cloud', 'Docker', 'Material UI'],
-    image: '/superlearnerr.png'
+    image: '/superlearnerr.webp'
   },
   {
     id: 'educational',
@@ -24,15 +24,15 @@ const baseProyectos = [
     year: '2024',
     description: 'Foro creado para estudiantes con la función de ver y calificar profesores.',
     badges: ['HTML5', 'CSS3', 'JavaScript', 'Boostrap'],
-    image: '/foruaa.png'
+    image: '/foruaa.webp'
   },
   {
     id: 'portfolio',
     title: 'Nutrias',
     year: '2024',
-    description: 'Una Página sobre Nutrias.',
+    description: 'Un sitio web educativo y visualmente atractivo dedicado a las nutrias, destacando su hábitat, características y conservación.',
     badges: ['HTML', 'CSS', 'JavaScript'],
-    image: '/nutrias.png'
+    image: '/nutrias.webp'
   },
   {
     id: 'app',
@@ -40,15 +40,15 @@ const baseProyectos = [
     year: '2025',
     description: 'Landing page para Repify, un puente entre estudiantes y proyectos interesantes.',
     badges: ['Next.js', 'TypeScript', 'Tailwind', 'Shadcn', 'Motion'],
-    image: '/landingrepi.png'
+    image: '/landingrepi.webp'
   },
   {
     id: 'website',
     title: 'TM Cositas',
     year: '2024',
-    description: 'Pagina web hecha para TM Cositas.',
+    description: 'Un sitio web moderno y funcional diseñado para TM Cositas, destacando su catálogo de productos y servicios con un enfoque en la experiencia del usuario.',
     badges: ['Astro', 'Tailwind'],
-    image: '/tmcositas.png'
+    image: '/tmcositas.webp'
   }
 ]
 
