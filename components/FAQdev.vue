@@ -23,16 +23,16 @@
         <div
           v-for="(faq, index) in faqs"
           :key="index"
-          class="overflow-hidden transition-all duration-300 border rounded-lg border-gray-700/40 bg-gray-800/50 backdrop-blur-sm hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]"
+          class="p-6 transition-all duration-300 border rounded-xl bg-dark/70 border-gray-700/40 shadow-md hover:border-accent hover:shadow-[0_0_25px_rgba(0,255,200,0.3)] hover:scale-[1.02]"
         >
           <button
-            class="flex items-center justify-between w-full px-6 py-5 text-left transition-colors hover:bg-gray-800"
+            class="flex items-center justify-between w-full text-left transition-colors px-2 py-2 rounded-md"
             @click="toggleFAQ(index)"
             :aria-expanded="openIndex === index"
             :aria-controls="`faq-answer-${index}`"
           >
             <span class="text-lg font-medium text-light">{{ faq.question }}</span>
-            <div class="flex items-center justify-center w-8 h-8 transition-transform duration-300 rounded-full bg-gray-700/50 text-accent">
+            <div class="flex items-center justify-center w-8 h-8 transition-transform duration-300 rounded-full text-accent">
               <Icon
                 :name="openIndex === index ? 'lucide:chevron-up' : 'lucide:chevron-down'"
                 class="w-5 h-5"
@@ -44,7 +44,7 @@
             class="overflow-hidden transition-all duration-300 ease-in-out"
             :class="openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'"
           >
-            <div class="px-6 py-5 leading-relaxed border-t border-gray-700/40 text-light/80">
+            <div class="px-2 pt-4 text-light/80 leading-relaxed border-t border-gray-700/40">
               {{ faq.answer }}
             </div>
           </div>

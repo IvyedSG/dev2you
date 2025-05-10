@@ -28,7 +28,7 @@
             id="nombre"
             v-model="form.nombre"
             required
-            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            class="w-full px-4 py-3 text-light bg-black/10 backdrop-blur-sm border border-gray-700/40  rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
             placeholder="Tu nombre"
           />
           <p v-if="errors.nombre" class="mt-1 text-sm text-red-500">{{ errors.nombre }}</p>
@@ -42,7 +42,7 @@
             id="correo"
             v-model="form.correo"
             required
-            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            class="w-full px-4 py-3 text-light bg-black/10 backdrop-blur-sm border border-gray-700/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
             placeholder="tu@email.com"
           />
           <p v-if="errors.correo" class="mt-1 text-sm text-red-500">{{ errors.correo }}</p>
@@ -55,7 +55,7 @@
             type="tel"
             id="telefono"
             v-model="form.telefono"
-            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            class="w-full px-4 py-3 text-light bg-black/10 backdrop-blur-sm border border-gray-700/40  rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
             placeholder="+51 987 654 321"
           />
         </div>
@@ -67,7 +67,7 @@
             type="text"
             id="empresa"
             v-model="form.empresa"
-            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            class="w-full px-4 py-3 text-light bg-black/10 backdrop-blur-sm border border-gray-700/40  rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
             placeholder="Nombre de tu empresa"
           />
         </div>
@@ -79,7 +79,7 @@
             id="asunto"
             v-model="form.asunto"
             required
-            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            class="w-full px-4 py-3 text-light bg-black/10 backdrop-blur-sm border border-gray-700/40  rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
           >
             <option value="" disabled selected>Selecciona un asunto</option>
             <option value="Consulta general">Consulta general</option>
@@ -98,7 +98,7 @@
             v-model="form.mensaje"
             required
             rows="5"
-            class="w-full px-4 py-3 text-light bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            class="w-full px-4 py-3 text-light bg-black/10 backdrop-blur-sm border border-gray-700/40  rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
             placeholder="¿En qué podemos ayudarte?"
           ></textarea>
           <p v-if="errors.mensaje" class="mt-1 text-sm text-red-500">{{ errors.mensaje }}</p>
@@ -115,17 +115,18 @@
         </div>
       </form>
     </div>
-      <!-- Notificación emergente -->
-      <div
-        v-if="showToast"
-        class="fixed bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transition-opacity duration-300"
-        :class="{
-          'top-20 right-5': !isMobile, // En pantallas grandes, aparece en la esquina superior derecha
-          'top-0 left-0 w-full text-center py-4 z-50': isMobile, // En móviles, ocupa toda la parte superior
-        }"
-      >
-        ¡Mensaje enviado con éxito!
-      </div>
+
+    <!-- Notificación -->
+    <div
+      v-if="showToast"
+      class="fixed bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transition-opacity duration-300"
+      :class="{
+        'top-20 right-5': !isMobile,
+        'top-0 left-0 w-full text-center py-4 z-50': isMobile,
+      }"
+    >
+      ¡Mensaje enviado con éxito!
+    </div>
   </section>
 </template>
 
@@ -149,9 +150,7 @@ const errors = ref({
   mensaje: null,
 })
 
-const showToast = ref(false) // Controla la visibilidad de la notificación
-
-// Detectar si es un dispositivo móvil
+const showToast = ref(false)
 const isMobile = computed(() => window.innerWidth <= 768)
 
 const validateForm = () => {
@@ -199,11 +198,8 @@ const handleSubmit = () => {
   emailjs
     .send('service_sqr49yr', 'template_kwhcouf', templateParams, '9YK2OVWcvpBQxBaKF')
     .then(() => {
-      showToast.value = true // Mostrar la notificación
-      setTimeout(() => {
-        showToast.value = false // Ocultar la notificación después de 5 segundos
-      }, 5000)
-
+      showToast.value = true
+      setTimeout(() => (showToast.value = false), 5000)
       form.value = {
         nombre: '',
         correo: '',
