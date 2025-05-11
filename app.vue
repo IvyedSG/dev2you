@@ -8,6 +8,14 @@
 </template>
 
 <script setup>
+import { useHead } from '@vueuse/head'
+import { onMounted } from 'vue'
+
+// Ejecutar solo en cliente
+onMounted(() => {
+  document.documentElement.classList.add('dark')
+})
+
 // Configurar metadatos globales del sitio
 useHead({
   titleTemplate: 'Dev4You',
