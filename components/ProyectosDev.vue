@@ -171,7 +171,7 @@ const stopAutoSlide = () => {
               <div class="overflow-hidden transition-all duration-500 transform group hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/30 rounded-xl backdrop-blur-md bg-dark/70">
                 <div class="h-full card">
                   <div class="relative w-full h-64 overflow-hidden">
-                    <img
+                    <NuxtImg
                       :src="proyecto.image"
                       :alt="proyecto.title"
                       class="absolute inset-0 object-cover w-full h-full"

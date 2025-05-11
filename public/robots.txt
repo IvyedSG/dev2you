@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://dev4you.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 5
+
+# Host
+Host: https://dev4you.com
