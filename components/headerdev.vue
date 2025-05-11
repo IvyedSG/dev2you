@@ -8,13 +8,14 @@
         <span class="transition-colors duration-300 text-dark dark:text-light group-hover:text-accent">You</span>
       </a>
 
-      <!-- Botón menú -->
+          <!-- Botón menú sin hover -->
       <div class="lg:hidden">
-        <button @click="toggleMenu" class="btn btn-ghost z-50 relative">
+        <button @click="toggleMenu" class="z-50 relative focus:outline-none">
           <i v-if="!isMenuOpen" class="fas fa-bars text-2xl text-dark dark:text-light"></i>
-          <i v-else class="fas fa-times text-2xl text-dark dark:text-light"></i>
+          <i v-else class="fas fa-times text-2xl text-white"></i>
         </button>
       </div>
+
 
       <!-- Menú móvil -->
       <transition name="fade">
