@@ -118,12 +118,12 @@ const endTouch = () => {
   startX = 0
 }
 
-// Auto slide
+
 let autoSlideInterval = null
 const startAutoSlide = () => {
   autoSlideInterval = setInterval(() => {
     nextProject()
-  }, 5000)
+  }, 10000)
 }
 const stopAutoSlide = () => {
   clearInterval(autoSlideInterval)
