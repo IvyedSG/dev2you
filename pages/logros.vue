@@ -1,7 +1,7 @@
 <template>
 <div class="min-h-screen bg-dark">
     <!-- Sección de logros mejorada -->
-    <section class="relative py-16 overflow-hidden bg-dark pt-28">
+    <section class="relative py-16 overflow-hidden bg-dark pt-14">
         <!-- Fondos decorativos mejorados -->
         <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-gray-900/50 to-transparent"></div>
         <div class="absolute rounded-full -top-20 right-20 w-96 h-96 bg-accent/10 filter blur-3xl animate-pulse-slow"></div>
