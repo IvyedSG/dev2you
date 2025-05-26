@@ -24,7 +24,7 @@
                 <a href="#equipo" @click="toggleMenu" class="text-xl font-medium w-full text-center border-b border-white/10 py-4 hover:text-accent transition-transform hover:scale-105">Equipo</a>
                 <a href="#proceso" @click="toggleMenu" class="text-xl font-medium w-full text-center border-b border-white/10 py-4 hover:text-accent transition-transform hover:scale-105">Paso a paso</a>
                 <a href="#faq" @click="toggleMenu" class="text-xl font-medium w-full text-center border-b border-white/10 py-4 hover:text-accent transition-transform hover:scale-105">Preguntas Frecuentes</a>
-                <a href="/logros" @click="toggleMenu" class="text-xl font-medium w-full text-center border-b border-white/10 py-4 hover:text-accent transition-transform hover:scale-105">Logros</a>
+                <a href="/logros" @click="toggleMenu" class="text-xl font-medium w-full text-center border-b border-white/10 py-4 hover:text-accent transition-transform hover:scale-105">Logro</a>
                 <a href="#contacto" @click="toggleMenu" class="text-xl font-bold text-accent w-full text-center py-4 hover:underline">Contáctanos</a>
             </div>
         </transition>
@@ -48,7 +48,7 @@
                     <a href="#faq" class="transition-transform hover:scale-105 hover:text-accent">Preguntas Frecuentes</a>
                 </li>
                 <li>
-                    <a href="/logros" class="transition-transform hover:scale-105 hover:text-accent">Logros</a>
+                    <a href="/logros" class="transition-transform hover:scale-105 hover:text-accent">Logro</a>
                 </li>
             </ul>
         </nav>
@@ -61,13 +61,14 @@
 </header>
 </template>
 
-<script>
-import {
-    ref,
-    watch
-} from "vue";
+<script setup>
+import { ref, watch } from "vue";
 
 const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+};
 
 watch(isMenuOpen, (value) => {
     document.body.style.overflow = value ? "hidden" : "";
