@@ -34,7 +34,6 @@
           <p v-if="errors.nombre" class="mt-1 text-sm text-red-500">{{ errors.nombre }}</p>
         </div>
 
-        <!-- Correo -->
         <div>
           <label for="correo" class="block mb-2 text-sm font-medium text-light">Correo Electrónico *</label>
           <input
