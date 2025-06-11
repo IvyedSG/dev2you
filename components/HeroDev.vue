@@ -166,7 +166,7 @@ const cardStyle = (index) => {
 onMounted(() => {
   interval = setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % cards.length
-  }, 3500)
+  }, 6000)
 })
 
 onBeforeUnmount(() => {
