@@ -1,12 +1,12 @@
 <template>
   <section id="contacto" class="relative py-24 overflow-hidden bg-dark">
-    <!-- Fondos decorativos -->
+
     <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-gray-dark to-transparent opacity-80"></div>
     <div class="absolute bottom-0 right-0 w-1/3 rounded-full h-1/3 bg-accent/5 filter blur-3xl"></div>
     <div class="absolute rounded-full top-40 left-20 w-72 h-72 bg-accent/5 filter blur-3xl"></div>
 
     <div class="relative z-10 px-4 mx-auto max-w-6xl">
-      <!-- Encabezado -->
+
       <div class="mb-16 text-center">
         
         <h2 class="mb-4 text-4xl font-bold md:text-5xl">
